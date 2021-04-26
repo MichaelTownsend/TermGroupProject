@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <link rel="stylesheet" href="./css/snake.css">
+
+    </body>
+    <head>
+        <p class="test">name:<input id="name" required></p>
+        <button onclick="save()">log In</button>
+        <script>
+            save = () =>{
+                console.log(document.getElementById("name").value == "");
+                if(document.getElementById("name").value != ""){
+                    if(document.getElementById("name").value == "admin"){
+                        window.location.href = "./admin.html";
+                    }else {
+                        let name = '{"name":"'+document.getElementById("name").value+'"}';
+                        localStorage.setItem("name",name);
+                        window.location.href = "./gamePage.html";
+                    }
+                    
+                }else{
+                    alert("you didnt enter a name!!")
+                }  
+            }
+        </script>
+    </head>
+</html>
